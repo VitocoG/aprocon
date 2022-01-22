@@ -1,17 +1,16 @@
-<?php
+<?php 
+
 session_start();
-$clase          =   'proveedores';
+date_default_timezone_set( 'America/Santiago' );
 
-require_once ( '../../config/model.class.php' );
-$model          =   new   model;
 
-if( $_SESSION ):
-    $permisos   =   $model->Permisos( $clase, 'permisos', $_SESSION['id'] );
-    foreach( $permisos as $value ):
-        ( $value[ $clase ] > 0 ) ? require_once( $clase.'Controller.php' ) : header( 'Location:../../' );
-    endforeach;
-else:
-    header( 'Location:../../' );
-endif;
+    $class	=	'proveedores';
 
+    require_once '../../config/model.class.php';
+    $model  =   new model;
+
+    require_once $class.'Model.php';
+    $clase  = new $class;
+
+    require_once '../../config/permisos.php';
 ?>

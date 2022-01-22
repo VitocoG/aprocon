@@ -1,10 +1,9 @@
-<?php
+<?php 
 
 session_start();
 date_default_timezone_set( 'America/Santiago' );
 
-
-$class  =   'entrega';
+$class	=	'trabajadores';
 
 require_once '../../config/model.class.php';
 $model  =   new model;
@@ -12,7 +11,5 @@ $model  =   new model;
 require_once $class.'Model.php';
 $clase  = new $class;
 
-require_once './'.$class.'Controller.php';
-
-
+require_once '../../config/permisos.php';
 ?>
