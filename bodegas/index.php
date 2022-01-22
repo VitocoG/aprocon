@@ -3,7 +3,7 @@
 session_start();
 date_default_timezone_set( 'America/Santiago' );
 
-$class	=	'depositos';
+$class	=	'bodegas';
 
 require_once '../../config/model.class.php';
 $model  =   new model;
